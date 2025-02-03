@@ -53,7 +53,7 @@
       cursor: not-allowed; 
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+ 
 </head>
 <body>
   <p id="story">Once upon a time...</p>
@@ -81,21 +81,7 @@
 
   <script>
     // Preload sound files
-    var soundName = new Audio('./Name.mp3');
-    var soundAction = new Audio('./Action.mp3');
-    var soundAdjective = new Audio('./Adjective.mp3');
-    var soundThing = new Audio('./Thing.mp3');
-    var soundAnd = new Audio('./And.mp3');
-    var soundAt = new Audio('./At.mp3');
-    var soundThen = new Audio('./Then.mp3');
-    var soundWith = new Audio('./With.mp3');
-    var soundThe = new Audio('./The.mp3');
-    var soundEnd = new Audio('./End.mp3');
-    var .he = new Audio('./She.mp3');
-    var soundHe = new Audio('./He.mp3');
-    var soundBecause = new Audio('./Because.mp3');
-    var soundEvent = new Audio('./Event.mp3');
-    var soundRestart = new Audio('./Restart.mp3');
+  
 
     // Button references
     var story = document.getElementById('story');
@@ -119,13 +105,11 @@
     // Play sound and add text for each button
     var buttonRestart = document.getElementById('restart');
 buttonRestart.addEventListener('click', function() {
-  soundRestart.play();
   story.innerText = "Once upon a time...";
   enableButtons();
 });
 
 function Name() {
-  soundName.play();
       var randomNumber = Math.floor(Math.random() * 10) + 1;
       if (randomNumber == 7) {
         story.innerText += " Frodo Baggins";
@@ -176,7 +160,6 @@ function Adjectivee() {
 
 }
 function THING() {
-  soundThing.play();
       var randomNumber = Math.floor(Math.random() * 10) + 1;
       if (randomNumber == 7) {
         story.innerText += " Magic Staff";
@@ -264,7 +247,7 @@ Adjectivee();
  
 })
 function Eventt() {
-  soundEvent.play();
+
   var randomNumber = Math.floor(Math.random() * 10) + 1;
   if (randomNumber == 7) {
         story.innerText += " was responsible for a thousand murders";
@@ -395,47 +378,38 @@ buttonName.addEventListener('click', function() {
 
 
     buttonAnd.addEventListener('click', function() {
-      soundAnd.play();
       story.innerText += " and";
     });
 
     buttonAt.addEventListener('click', function() {
-      soundAt.play();
       story.innerText += " at";
     });
 
     buttonThen.addEventListener('click', function() {
-      soundThen.play();
       story.innerText += " then";
     });
 
     buttonWith.addEventListener('click', function() {
-      soundWith.play();
       story.innerText += " with";
     });
 
     buttonThe.addEventListener('click', function() {
-      soundThe.play();
       story.innerText += " The";
     });
 
     buttonEnd.addEventListener('click', function() {
-      soundEnd.play();
       story.innerText += " THE END";
       disableAndGrayOutButtons(); 
     });
     buttonShe.addEventListener('click', function() {
-      .he.play();
       story.innerText += " She";
        
     });
     buttonBecause.addEventListener('click', function() {
-      soundBecause.play();
       story.innerText += " Because";
        
     });
     buttonHe.addEventListener('click', function() {
-      soundHe.play();
       story.innerText += " He";
   
     });
