@@ -81,21 +81,21 @@
 
   <script>
     // Preload sound files
-    var soundName = new Audio('sounds/Name.mp3');
-    var soundAction = new Audio('sounds/Action.mp3');
-    var soundAdjective = new Audio('sounds/Adjective.mp3');
-    var soundThing = new Audio('sounds/Thing.mp3');
-    var soundAnd = new Audio('sounds/And.mp3');
-    var soundAt = new Audio('sounds/At.mp3');
-    var soundThen = new Audio('sounds/Then.mp3');
-    var soundWith = new Audio('sounds/With.mp3');
-    var soundThe = new Audio('sounds/The.mp3');
-    var soundEnd = new Audio('sounds/End.mp3');
-    var soundShe = new Audio('sounds/She.mp3');
-    var soundHe = new Audio('sounds/He.mp3');
-    var soundBecause = new Audio('sounds/Because.mp3');
-    var soundEvent = new Audio('sounds/Event.mp3');
-    var soundRestart = new Audio('sounds/Restart.mp3');
+    var soundName = new Audio('./Name.mp3');
+    var soundAction = new Audio('./Action.mp3');
+    var soundAdjective = new Audio('./Adjective.mp3');
+    var soundThing = new Audio('./Thing.mp3');
+    var soundAnd = new Audio('./And.mp3');
+    var soundAt = new Audio('./At.mp3');
+    var soundThen = new Audio('./Then.mp3');
+    var soundWith = new Audio('./With.mp3');
+    var soundThe = new Audio('./The.mp3');
+    var soundEnd = new Audio('./End.mp3');
+    var .he = new Audio('./She.mp3');
+    var soundHe = new Audio('./He.mp3');
+    var soundBecause = new Audio('./Because.mp3');
+    var soundEvent = new Audio('./Event.mp3');
+    var soundRestart = new Audio('./Restart.mp3');
 
     // Button references
     var story = document.getElementById('story');
@@ -425,7 +425,7 @@ buttonName.addEventListener('click', function() {
       disableAndGrayOutButtons(); 
     });
     buttonShe.addEventListener('click', function() {
-      soundShe.play();
+      .he.play();
       story.innerText += " She";
        
     });
