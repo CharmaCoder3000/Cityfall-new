@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The unhinged adventure</title>
+  <style>
+    body {
+      background-image: url('Back.webp');
+      background-size: cover;
+      color: white;
+      font-family: 'Cinzel', serif; 
+      text-align: center;
+      padding: 50px;
+      margin: 0;
+    }
+
+    /* Your existing styles */
+    button {
+      font-family: 'Cinzel', serif;
+      background-color: #4B3621;
+      color: #F4C542; 
+      border: 2px solid #F4C542;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #F4C542;
+      color: #4B3621;
+      transform: scale(1.1);
+    }
+
+    #story {
+      font-size: 24px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 20px;
+      width: 80%;
+    }
+
+    .gray-button {
+      background-color: #D3D3D3; 
+      color: #808080;
+      border-color: #808080;
+      cursor: not-allowed; 
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <p id="story">Once upon a time...</p>
+
+  <!-- Buttons -->
+   <h1> </h1>
+  <button id="name">Add Name</button>
+  <button id="action">Action</button>
+  <button id="adjective">Adjective</button>
+  <button id="thing">Thing</button>
+  <button id="and">And</button>
+  <button id="at">At</button>
+  <button id="then">Then</button>
+  <button id="with">With</button>
+  <button id="the">The</button>
+  <button id="she">She</button>
+  <button id="he">He</button>
+  <button id="because">Because</button>
+  <button id="event">Event</button>
+  <button id="place">Place</button>
+  <button id="randomizer">Randomizer</button>
+  <button id="end">THE END</button>
+  <button id="restart" class="gray-button" disabled>Restart</button>
+
+
+  <script>
+    // Preload sound files
+    var soundName = new Audio('sounds/Name.mp3');
+    var soundAction = new Audio('sounds/Action.mp3');
+    var soundAdjective = new Audio('sounds/Adjective.mp3');
+    var soundThing = new Audio('sounds/Thing.mp3');
+    var soundAnd = new Audio('sounds/And.mp3');
+    var soundAt = new Audio('sounds/At.mp3');
+    var soundThen = new Audio('sounds/Then.mp3');
+    var soundWith = new Audio('sounds/With.mp3');
+    var soundThe = new Audio('sounds/The.mp3');
+    var soundEnd = new Audio('sounds/End.mp3');
+    var soundShe = new Audio('sounds/She.mp3');
+    var soundHe = new Audio('sounds/He.mp3');
+    var soundBecause = new Audio('sounds/Because.mp3');
+    var soundEvent = new Audio('sounds/Event.mp3');
+    var soundRestart = new Audio('sounds/Restart.mp3');
+
+    // Button references
+    var story = document.getElementById('story');
+    var buttonName = document.getElementById('name');
+    var buttonAction = document.getElementById('action');
+    var buttonAdjective = document.getElementById('adjective');
+    var buttonThing = document.getElementById('thing');
+    var buttonAnd = document.getElementById('and');
+    var buttonAt = document.getElementById('at');
+    var buttonThen = document.getElementById('then');
+    var buttonWith = document.getElementById('with');
+    var buttonThe = document.getElementById('the');
+    var buttonHe = document.getElementById('he');
+    var buttonShe = document.getElementById('she');
+    var buttonEnd = document.getElementById('end');
+    var buttonRandom = document.getElementById('randomizer');
+    var buttonPlace = document.getElementById('place');
+
+    var buttonBecause = document.getElementById('because');
+    var buttonEvent = document.getElementById('event');
+    // Play sound and add text for each button
+    var buttonRestart = document.getElementById('restart');
+buttonRestart.addEventListener('click', function() {
+  soundRestart.play();
+  story.innerText = "Once upon a time...";
+  enableButtons();
+});
+
+function Name() {
+  soundName.play();
+      var randomNumber = Math.floor(Math.random() * 10) + 1;
+      if (randomNumber == 7) {
+        story.innerText += " Frodo Baggins";
+      } else if (randomNumber == 1) {
+        story.innerText += " Gandalf The Gray";
+      } else if (randomNumber == 3) {
+        story.innerText += " Sauron";
+      } else if (randomNumber == 4) {
+        story.innerText += " Galadriel";
+      } else if (randomNumber == 5) {
+        story.innerText += " Gollum";
+      } else if (randomNumber == 6) {
+        story.innerText += " Bilbo Baggins";
+      } else if (randomNumber == 2) {
+        story.innerText += " Legolas";
+      } else if (randomNumber == 8) {
+        story.innerText += " Gimli";
+      } else if (randomNumber == 9) {
+        story.innerText += " Thorin Oakenshield";
+      } else if (randomNumber == 10) {
+        story.innerText += " Treebeard";
+      }
+}
+function Adjectivee() {
+  soundAdjective.play();
+      var randomNumber = Math.floor(Math.random() * 10) + 1;
+      if (randomNumber == 7) {
+        story.innerText += " Stupid";
+      } else if (randomNumber == 1) {
+        story.innerText += " Fat";
+      } else if (randomNumber == 3) {
+        story.innerText += " Short";
+      } else if (randomNumber == 4) {
+        story.innerText += " Wizened";
+      } else if (randomNumber == 5) {
+        story.innerText += " Skinny";
+      } else if (randomNumber == 6) {
+        story.innerText += " Gross";
+      } else if (randomNumber == 2) {
+        story.innerText += " Foolish";
+      } else if (randomNumber == 8) {
+        story.innerText += " Cunning";
+      } else if (randomNumber == 9) {
+        story.innerText += " Enlightened";
+      } else if (randomNumber == 10) {
+        story.innerText += " Mortified";
+      }
+
+}
+function THING() {
+  soundThing.play();
+      var randomNumber = Math.floor(Math.random() * 10) + 1;
+      if (randomNumber == 7) {
+        story.innerText += " Magic Staff";
+      } else if (randomNumber == 1) {
+        story.innerText += " War Hammer";
+      } else if (randomNumber == 3) {
+        story.innerText += " Bow";
+      } else if (randomNumber == 4) {
+        story.innerText += " Elvish Blade";
+      } else if (randomNumber == 5) {
+        story.innerText += " Boulder";
+      } else if (randomNumber == 6) {
+        story.innerText += " Thousand horrors";
+      } else if (randomNumber == 2) {
+        story.innerText += " Pan";
+      } else if (randomNumber == 8) {
+        story.innerText += " Eagle";
+      } else if (randomNumber == 9) {
+        story.innerText += " Tree";
+      } else if (randomNumber == 10) {
+        story.innerText += " Balrog";
+      }
+}
+buttonPlace.addEventListener('click', function(){
+  PLACE()
+})
+buttonRandom.addEventListener('click', function() {
+Adjectivee();
+ Name();
+ Action();
+ Name();
+ story.innerText +=" At the";
+ PLACE()
+ story.innerText +=" Because";
+ Name()
+ Eventt()
+ story.innerText +=" At the";
+ PLACE()
+ story.innerText +=" And then";
+ Name()
+ Action()
+ Adjectivee()
+ Name()
+ story.innerText +=" With A";
+ THING()
+ story.innerText +=" And then";
+ Adjectivee();
+ Name();
+ Action();
+ Name();
+ story.innerText +=" At the";
+ PLACE()
+ story.innerText +=" Because";
+ Name()
+ Eventt()
+ story.innerText +=" At the";
+ PLACE()
+ story.innerText +=" And then";
+ Name()
+ Action()
+ Adjectivee()
+ Name()
+ story.innerText +=" With A";
+ THING()
+ story.innerText +=" And then";
+ Adjectivee();
+ Name();
+ Action();
+ Name();
+ story.innerText +=" At the";
+ PLACE()
+ story.innerText +=" Because";
+ Name()
+ Eventt()
+ story.innerText +=" At the";
+ PLACE()
+ story.innerText +=" And then";
+ Name()
+ Action()
+ Adjectivee()
+ Name()
+ story.innerText +=" With A";
+ THING()
+ 
+ 
+})
+function Eventt() {
+  soundEvent.play();
+  var randomNumber = Math.floor(Math.random() * 10) + 1;
+  if (randomNumber == 7) {
+        story.innerText += " was responsible for a thousand murders";
+      } else if (randomNumber == 1) {
+        story.innerText += " Was voted King";
+      } else if (randomNumber == 3) {
+        story.innerText += " Indeed was uninteligent";
+      } else if (randomNumber == 4) {
+        story.innerText += " was the victim of a curse";
+      } else if (randomNumber == 5) {
+        story.innerText += " ate a Lembas";
+      } else if (randomNumber == 6) {
+        story.innerText += " Used his magic";
+      } else if (randomNumber == 2) {
+        story.innerText += " Wore the ring";
+      } else if (randomNumber == 8) {
+        story.innerText += " was Turned into a wraith";
+      } else if (randomNumber == 9) {
+        story.innerText += " was Voted *Most likely to perish* ";
+      } else if (randomNumber == 10) {
+        story.innerText += " Died";
+      }
+}
+function Action() {
+  soundAction.play();
+      var randomNumber = Math.floor(Math.random() * 10) + 1;
+      if (randomNumber == 7) {
+        story.innerText += " Punched";
+      } else if (randomNumber == 1) {
+        story.innerText += " Hugged";
+      } else if (randomNumber == 3) {
+        story.innerText += " Drugged";
+      } else if (randomNumber == 4) {
+        story.innerText += " Burned";
+      } else if (randomNumber == 5) {
+        story.innerText += " Berated";
+      } else if (randomNumber == 6) {
+        story.innerText += " Jumped";
+      } else if (randomNumber == 2) {
+        story.innerText += " Attacked";
+      } else if (randomNumber == 8) {
+        story.innerText += " Shot";
+      } else if (randomNumber == 9) {
+        story.innerText += " Threw";
+      } else if (randomNumber == 10) {
+        story.innerText += " Choked";
+      }
+
+}
+function PLACE() {
+  var randomNumber = Math.floor(Math.random() * 10) + 1;
+      if (randomNumber == 7) {
+        story.innerText += " Shire";
+      } else if (randomNumber == 1) {
+        story.innerText += " Minus Tirith";
+      } else if (randomNumber == 3) {
+        story.innerText += " Mordor";
+      } else if (randomNumber == 4) {
+        story.innerText += " Misty Mountains";
+      } else if (randomNumber == 5) {
+        story.innerText += " Erebor";
+      } else if (randomNumber == 6) {
+        story.innerText += " Lorian";
+      } else if (randomNumber == 2) {
+        story.innerText += " Gondor";
+      } else if (randomNumber == 8) {
+        story.innerText += " Rohan";
+      } else if (randomNumber == 9) {
+        story.innerText += " Valinor";
+      } else if (randomNumber == 10) {
+        story.innerText += " Isangard";
+      }
+}
+function enableButtons() {
+  buttonRestart.classList.add('gray-button');
+  buttonRestart.disabled = true;
+  buttonName.disabled = false;
+  buttonAction.disabled = false;
+  buttonAdjective.disabled = false;
+  buttonThing.disabled = false;
+  buttonAnd.disabled = false;
+  buttonAt.disabled = false;
+  buttonThen.disabled = false;
+  buttonWith.disabled = false;
+  buttonThe.disabled = false;
+  buttonEnd.disabled = false;
+  buttonHe.disabled = false;
+  buttonShe.disabled = false;
+  buttonBecause.disabled = false;
+  buttonEvent.disabled = false;
+  buttonRandom.disabled = false;
+  buttonPlace.disabled = false;
+  buttonName.classList.remove('gray-button');
+  buttonAction.classList.remove('gray-button');
+  buttonAdjective.classList.remove('gray-button');
+  buttonThing.classList.remove('gray-button');
+  buttonAnd.classList.remove('gray-button');
+  buttonAt.classList.remove('gray-button');
+  buttonThen.classList.remove('gray-button');
+  buttonWith.classList.remove('gray-button');
+  buttonThe.classList.remove('gray-button');
+  buttonEnd.classList.remove('gray-button');
+  buttonHe.classList.remove('gray-button');
+  buttonShe.classList.remove('gray-button');
+  buttonBecause.classList.remove('gray-button');
+  buttonEvent.classList.remove('gray-button');
+  buttonRandom.classList.remove('gray-button');
+  buttonPlace.classList.remove('gray-button');
+}
+buttonName.addEventListener('click', function() {
+     Name()
+    });
+
+    buttonAction.addEventListener('click', function() {
+    Action()
+    });
+
+    buttonAdjective.addEventListener('click', function() {
+      Adjectivee()
+    });
+
+    buttonThing.addEventListener('click', function() {
+      THING()
+    });
+    buttonEvent.addEventListener('click', function() {
+      Eventt()
+    });
+
+
+    buttonAnd.addEventListener('click', function() {
+      soundAnd.play();
+      story.innerText += " and";
+    });
+
+    buttonAt.addEventListener('click', function() {
+      soundAt.play();
+      story.innerText += " at";
+    });
+
+    buttonThen.addEventListener('click', function() {
+      soundThen.play();
+      story.innerText += " then";
+    });
+
+    buttonWith.addEventListener('click', function() {
+      soundWith.play();
+      story.innerText += " with";
+    });
+
+    buttonThe.addEventListener('click', function() {
+      soundThe.play();
+      story.innerText += " The";
+    });
+
+    buttonEnd.addEventListener('click', function() {
+      soundEnd.play();
+      story.innerText += " THE END";
+      disableAndGrayOutButtons(); 
+    });
+    buttonShe.addEventListener('click', function() {
+      soundShe.play();
+      story.innerText += " She";
+       
+    });
+    buttonBecause.addEventListener('click', function() {
+      soundBecause.play();
+      story.innerText += " Because";
+       
+    });
+    buttonHe.addEventListener('click', function() {
+      soundHe.play();
+      story.innerText += " He";
+  
+    });
+    
+    function disableAndGrayOutButtons() {
+      buttonName.disabled = true;
+      buttonAction.disabled = true;
+      buttonAdjective.disabled = true;
+      buttonThing.disabled = true;
+      buttonAnd.disabled = true;
+      buttonAt.disabled = true;
+      buttonThen.disabled = true;
+      buttonWith.disabled = true;
+      buttonThe.disabled = true;
+      buttonEnd.disabled = true;
+      buttonHe.disabled = true;
+      buttonShe.disabled = true;
+      buttonEvent.disabled = true;
+      buttonBecause.disabled = true;
+      buttonRandom.disabled = true;
+      buttonRestart.disabled = false;
+      buttonPlace.disabled = true;
+      buttonName.classList.add('gray-button');
+      buttonAction.classList.add('gray-button');
+      buttonAdjective.classList.add('gray-button');
+      buttonThing.classList.add('gray-button');
+      buttonAnd.classList.add('gray-button');
+      buttonAt.classList.add('gray-button');
+      buttonThen.classList.add('gray-button');
+      buttonWith.classList.add('gray-button');
+      buttonThe.classList.add('gray-button');
+      buttonEnd.classList.add('gray-button');
+      buttonHe.classList.add('gray-button');
+      buttonShe.classList.add('gray-button');
+      buttonBecause.classList.add('gray-button');
+      buttonEvent.classList.add('gray-button');
+      buttonRandom.classList.add('gray-button');
+      buttonPlace.classList.add('gray-button');
+      buttonRestart.classList.remove('gray-button');
+    }
+  </script>
+</body>
+</html>
